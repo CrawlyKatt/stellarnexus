@@ -1,0 +1,110 @@
+class StellarNexus:
+    def __init__(self):
+        self.lore_database = {
+            "ship_names": ["Eureka", "Sentinel", "Ayers", "Nettesh", "Westpoint", "Nevermore", "Windermire"],
+            "star_systems": ["Solitude", "Solace", "Sentinel Point", "Ayers Nebula", "Nettesh"],
+            "crew_profiles": {
+                "Janet Walker": {
+                    "description": "Proud, confident, yet fallible. The Captain of UASA Eureka.",
+                },
+                "Zakkie Clark": {
+                    "description": "Second in command, extroverted, reactive, and passionate. Nicknamed 'Ocker' for being the most bogan of the group and loving her meat!",
+                },
+                "Tiffany Flinders-Taylor": {
+                    "description": "Provides comic relief to the crew.",
+                },
+                "Stephanie Patel": {
+                    "description": "Chief Engineer, nicknamed 'Duppy' for her love of dogs and engineering skills.",
+                },
+                "Man Wai Chen": {
+                    "description": "Navigation Officer with a stern demeanor, loves to cook multi-cultural food.",
+                },
+                "Nikalos Kostas": {
+                    "description": "Communications Specialist, invented a translation matrix and specializes in software translation layers and virtual machines.",
+                }
+            },
+            "dog_companion": {
+                "name": "Rover",
+                "description": "Patel's engineering co-working pup found on a desert planet. Later transformed into a 'cyberdog' in a TV movie.",
+            },
+            "ship_systems": {
+                "LuminoSphere": {
+                    "description": "The central nexus of the UASA Eureka, a piece of unknown technology. An immersive experience, reacting to touch and sound, controls the ship's sensors and systems.",
+                },
+                "StellarNexusDrive": {
+                    "description": "Utilizes gravitational manipulation and celestial navigation to create temporary wormholes, forming interconnected pathways between distant points in the cosmos.",
+                }
+            },
+            "time_travel_lore": {
+                "Yan_Collective": {
+                    "description": "Enigmatic time police exploiting time for their gain in the future-controlled by the Yan.",
+                    "intermediary_periods": ["5367-71342", "82737-103355"]
+                },
+                "Kemet": {
+                    "description": "Ancient human civilization enslaved by the Yan and now maintain time gates for commercial time travel.",
+                },
+                "Earth": {
+                    "description": "In spin-offs, a ball of water with humanity living in nomadic ships and settlements."
+                }
+            }
+        }
+
+    def get_ship_systems(self):
+        return self.lore_database["ship_systems"]
+
+    def get_crew_profiles(self):
+        return self.lore_database["crew_profiles"]
+
+    def get_star_systems(self):
+        return self.lore_database["star_systems"]
+
+    def get_time_travel_lore(self):
+        return self.lore_database["time_travel_lore"]
+
+    def get_ship_names(self):
+        return self.lore_database["ship_names"]
+
+
+def main():
+    sn = StellarNexus()
+    print("Ready for a true blue challenge, mate!")
+    print("Choose a topic to explore:")
+    print("1. Deck out the ship's systems with some fair dinkum Australian flair.")
+    print("2. Give scientific terms a dinkum Aussie makeover.")
+    print("3. Sprinkle in some classic Australian phrases into the crew's dialogue.")
+    print("4. Dive into the lore of star systems and interstellar travel.")
+    print("5. Unravel the secrets of time travel and the enigmatic Yan Collective.")
+    choice = input("Enter your choice (1-5): ")
+
+    if choice == "1":
+        systems = sn.get_ship_systems()
+        print("Available ship systems:")
+        for system, details in systems.items():
+            print(f"- {system}: {details['description']}")
+
+    elif choice == "2":
+        print("G'day, mate! How about we put an Aussie twist on scientific terms?")
+
+    elif choice == "3":
+        profiles = sn.get_crew_profiles()
+        print("Crew Profiles:")
+        for profile, details in profiles.items():
+            print(f"- {profile}: {details['description']}")
+
+    elif choice == "4":
+        star_systems = sn.get_star_systems()
+        print("Known star systems:")
+        for system in star_systems:
+            print(f"- {system}")
+
+    elif choice == "5":
+        time_lore = sn.get_time_travel_lore()
+        print("Time Travel Lore:")
+        for faction, details in time_lore.items():
+            print(f"- {faction}: {details['description']}")
+
+    else:
+        print("Fair dinkum, mate! That's not a valid choice. Try again!")
+
+if __name__ == "__main__":
+    main()
